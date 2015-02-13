@@ -8,7 +8,7 @@ random.seed()
 away_last = 0
 
 # Remember to change these 3 lines or nothing will work
-CHANNEL = '#exemple'
+CHANNEL = '#CatBots'
 SCOREFILE = "unoscores.txt"
 # Only the owner (starter of the game) can call .unostop to stop the game.
 # But this calls for a way to allow others to stop it after the game has been idle for a while.
