@@ -1,10 +1,5 @@
-Installation &c.
+Instal·lació:
 
-1) Run ./phenny - this creates a default config file
-2) Edit ~/.phenny/default.py
-3) Run ./phenny - this now runs phenny with your settings
-
-Enjoy!
-
--- 
-Sean B. Palmer, http://inamidst.com/sbp/
+1) Executa ./phenny - això crea l'arxiu de configuració.
+2) Edita l'arxiu ~/.phenny/default.py
+3) Executa ./phenny - això engega el bot amb la configuració.
