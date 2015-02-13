@@ -8,7 +8,7 @@ random.seed()
 away_last = 0
 
 # Remember to change these 3 lines or nothing will work
-CHANNEL = '#CatBots'
+CHANNEL = '#exemple'
 SCOREFILE = "unoscores.txt"
 # Only the owner (starter of the game) can call .unostop to stop the game.
 # But this calls for a way to allow others to stop it after the game has been idle for a while.
@@ -20,19 +20,19 @@ STRINGS = {
     'ALREADY_STARTED': u'\x0300,01%s ja ha iniciat el joc. Escriu ".ujoin" per jugar!',
     'GAME_STARTED': u'\x0300,01%s ha iniciat el joc de l\'UNO - Escriu ".ujoin" per jugar!',
     'GAME_STOPPED': u'\x0300,01Joc aturat.',
-    'CANT_STOP': u'\x0300,01Només el propietari del joc (%s) pot aturar el joc, tu no el pots aturar! Per aturar el joc de manera forcada, espera %s segons.',
-    'DEALING_IN': u'\x0300,01El jugador %s ha entrat al joc en la posició núm. %s!',
-    'JOINED': u'\x0300,01El jugador %s ha entrat al joc en la posició núm. %s!',
-    'ALREADY_JOINED': u'\x0300,01El jugador %s ja ha entrat, en la posició %s!',
+    'CANT_STOP': u'\x0300,01NomÃ©s el propietari del joc (%s) pot aturar el joc, tu no el pots aturar! Per aturar el joc de manera forcada, espera %s segons.',
+    'DEALING_IN': u'\x0300,01El jugador %s ha entrat al joc en la posiciÃ³ nÃºm. %s!',
+    'JOINED': u'\x0300,01El jugador %s ha entrat al joc en la posiciÃ³ nÃºm. %s!',
+    'ALREADY_JOINED': u'\x0300,01El jugador %s ja ha entrat!',
     'ENOUGH': u'\x0300,01Ja hi han suficients jugadors. Escriu ".deal" per iniciar el joc!',
     'NOT_STARTED': u'\x0300,01El joc no s\'ha iniciat. Escriu ".uno" per iniciar-lo!',
     'NOT_ENOUGH': u'\x0300,01No hi han suficients jugadors per repartir les cartes.',
     'NEEDS_TO_DEAL': u'\x0300,01%s ha de repartir.',
     'ALREADY_DEALT': u'\x0300,01Ja s\'han repartit les cartes.',
-    'ON_TURN': u'\x0300,01És el torn de %s.',
+    'ON_TURN': u'\x0300,01Ã‰s el torn de %s.',
     'DONT_HAVE': u'\x0300,01No tens aquesta carta, %s',
     'DOESNT_PLAY': u'\x0300,01No pots jugar aquesta carta, %s',
-    'UNO': u'\x0300,01UNO! %s té només una carta!',
+    'UNO': u'\x0300,01UNO! %s tÃ© nomÃ©s una carta!',
     'WIN': u'\x0300,01Ja tenim un guanyador! %s!!!! Aquest joc ha durat %s',
     'DRAWN_ALREADY': u'\x0300,01Ja has agafat una carta. Pots .pass o .play!',
     'DRAWS': u'\x0300,01%s agafa una carta',
@@ -42,23 +42,23 @@ STRINGS = {
     'NO_SCORES': u'\x0300,01Encara no hi han puntuacions',
     'TOP_CARD': u'\x0300,01Torn de %s. Carta de sobre de la pila: %s',
     'YOUR_CARDS': u'\x0300,01Les teves cartes: %s',
-    'NEXT_START': u'\x0300,01Següent: ',
+    'NEXT_START': u'\x0300,01SegÃ¼ent: ',
     'NEXT_PLAYER': u'\x0300,01%s (%s cartes)',
     'D2': u'\x0300,01%s agafa dues cartes i passa!',
     'CARDS': u'\x0300,01Cartes: %s',
     'WD4': u'\x0300,01%s agafa quatre cartes i passa!',
     'SKIPPED': u'\x0300,01%s passa!',
     'REVERSED': u'\x0300,01Ordre invertit!',
-    'GAINS': u'\x0300,01%s gains %s points!',
-    'SCORE_ROW': u'\x0300,01%s: #%s %s (%s punts, %s jocs, %s guanyats, %.2f punts per joc, %.2f percentatge de victòries)',
+    'GAINS': u'\x0300,01%s guanya %s punts!',
+    'SCORE_ROW': u'\x0300,01%s: #%s %s (%s punts, %s jocs, %s guanyats, %.2f punts per joc, %.2f percentatge de victÃ²ries)',
     'GAME_ALREADY_DEALT': u'\x0300,01Ja s\'han repartit les cartes. Espera a que s\'acabi.',
-    'PLAYER_COLOR_ENABLED': u'\x0300,01Colors de les cartes \x0309,01activats\x0300,01! Format: <COLOR>/[<CARTA>].  Exemple: R/[D2] és un +2 vermell. Escriu \'.uno-help\' per més ajuda.',
+    'PLAYER_COLOR_ENABLED': u'\x0300,01Colors de les cartes \x0309,01activats\x0300,01! Format: <COLOR>/[<CARTA>].  Exemple: R/[D2] Ã©s un +2 vermell. Escriu \'.uno-help\' per mÃ©s ajuda.',
     'PLAYER_COLOR_DISABLED': u'\x0300,01Colors de les cartes \x0304,01desactivats\x0300,01.',
     'DISABLED_PCE': u'\x0300,01Els colors de les cartes estan \x0304,01desactivats\x0300,01 per %s. Per activar-los, \'.pce-on\'',
     'ENABLED_PCE': u'\x0300,01Els colors de les cartes estan \x0309,01activats\x0300,01 per %s. Per desactivar-los, \'.pce-off\'',
-    'PCE_CLEARED': u'\x0300,01All players\' hand card color setting is reset by %s.',
+    'PCE_CLEARED': u'\x0300,01La configuraciÃ³ dels colors de les cartes ha estat restaurada per %s.',
     'PLAYER_LEAVES': u'\x0300,01El jugador %s ha marxat.',
-    'OWNER_CHANGE': u'\x0300,01El propietari del joc, %s, ha marxat. El nou propietari és %s.',
+    'OWNER_CHANGE': u'\x0300,01El propietari del joc, %s, ha marxat. El nou propietari Ã©s %s.',
 }
 
 class UnoBot:
@@ -401,7 +401,7 @@ class UnoBot:
             phenny.msg(CHANNEL, STRINGS['GAINS'] % (winner, score))
             self.saveScores(self.players.keys(), winner, score, (datetime.now() - self.startTime).seconds)
         except Exception, e:
-            print 'Score error: %s' % e
+            print 'Error en els punts: %s' % e
         self.players = dict()
         self.playerOrder = list()
         self.game_on = False
@@ -444,7 +444,7 @@ class UnoBot:
                 f.write(' '.join ([str(s) for s in prescores[p]]) + '\n')
             f.close()
         except Exception, e:
-            print 'Failed to write score file %s' % e
+            print 'Error al escriure el fitxer de punts a %s' % e
 
     # Custom added functions ============================================== #
     def rankings(self, rank_type):
@@ -539,7 +539,7 @@ class UnoBot:
         text = input.group().lower().split()
 
         if len(text) != 3:
-            phenny.reply("Invalid input for stats command. Try '.unostats ppg 10' to show the top 10 ranked by points per game. You can also show rankings by percent-wins 'pw'.")
+            phenny.reply("Escriu '.unostats ppg 10' pels 10 primers jugadors. Si vols obtenir la llista basada en els percentatges substitueix 'ppg' per 'pw'.")
             return
 
         if text[1] == "pw" or text[1] == "ppg":
@@ -569,7 +569,7 @@ unobot = UnoBot ()
 
 def uno(phenny, input):
     if input.sender != CHANNEL:
-        phenny.reply("Please join %s to play uno!" % (CHANNEL))
+        phenny.reply("Has d'entrar al canal %s per jugar a l'uno!" % (CHANNEL))
     elif input.sender == CHANNEL:
         unobot.start(phenny, input.nick)
 uno.commands = ['uno']
@@ -581,7 +581,7 @@ def unostop(phenny, input):
     if not (input.sender).startswith('#'):
         return
     unobot.stop(phenny, input)
-unostop.commands = ['unostop']
+unostop.commands = ['unostop', 'fiuno']
 unostop.priority = 'low'
 unostop.thread = False
 unostop.rate = 0
@@ -591,7 +591,7 @@ def join(phenny, input):
         return
     if input.sender == CHANNEL:
         unobot.join(phenny, input)
-join.commands = ['ujoin']
+join.commands = ['ujoin', 'ujugar']
 join.priority = 'low'
 join.thread = False
 join.rate = 0
@@ -600,7 +600,7 @@ def deal(phenny, input):
     if not (input.sender).startswith('#'):
         return
     unobot.deal(phenny, input)
-deal.commands = ['deal']
+deal.commands = ['deal', 'reparteix']
 deal.priority = 'low'
 deal.thread = False
 deal.rate = 0
@@ -609,7 +609,7 @@ def play(phenny, input):
     if not (input.sender).startswith('#'):
         return
     unobot.play(phenny, input)
-play.commands = ['play', 'p']
+play.commands = ['play', 'p', 'juga']
 play.priority = 'low'
 play.thread = False
 play.rate = 0
@@ -618,7 +618,7 @@ def draw(phenny, input):
     if not (input.sender).startswith('#'):
         return
     unobot.draw(phenny, input)
-draw.commands = ['draw', 'd', 'dr']
+draw.commands = ['draw', 'd', 'dr', 'agafa']
 draw.priority = 'low'
 draw.thread = False
 draw.rate = 0
@@ -627,7 +627,7 @@ def passs(phenny, input):
     if not (input.sender).startswith('#'):
         return
     unobot.passs(phenny, input)
-passs.commands = ['pass', 'pa']
+passs.commands = ['pass', 'pa', 'passar']
 passs.priority = 'low'
 passs.thread = False
 passs.rate = 0
@@ -641,7 +641,7 @@ unotop10.rate = 0
 
 def show_user_cards(phenny, input):
     unobot.showCards(phenny, input.nick)
-show_user_cards.commands = ['cards']
+show_user_cards.commands = ['cards', 'cartes']
 show_user_cards.priority = 'low'
 show_user_cards.thread = False
 show_user_cards.rate = 0
@@ -659,7 +659,7 @@ def leave(phenny, input):
     if not (input.sender).startswith('#'):
         return
     unobot.leave(phenny, input)
-leave.commands = ['leave']
+leave.commands = ['leave', 'sortir']
 leave.priority = 'low'
 leave.thread = False
 leave.rate = 0
@@ -705,14 +705,14 @@ unostats.rate = 0
 
 def uno_help(phenny, input):
     nick = input.group(2)
-    txt = 'For rules, examples, and getting started: https://j.mp/esl47K'
+    txt = u'Per les regles i les ordres del joc: https://j.mp/esl47K (en anglÃ¨s)'
     if nick:
         nick = (nick).strip()
         output = "%s: %s" % (nick, txt)
     else:
         output = txt
     phenny.say(output)
-uno_help.commands = ['uno-help', 'unohelp']
+uno_help.commands = ['uno-help', 'unohelp', 'uno-ajuda', 'uajuda']
 uno_help.priority = 'low'
 uno_help.thread = False
 uno_help.rate = 0
@@ -740,7 +740,7 @@ uno_ispce.rate = 0
 
 def uno_pce_clear(phenny, input):
     unobot.PCEClear(phenny, input.nick)
-uno_pce_clear.commands = ['.pce-clear']
+uno_pce_clear.commands = ['pce-clear']
 uno_pce_clear.priority = 'low'
 uno_pce_clear.thread = False
 uno_pce_clear.rate = 0
@@ -753,9 +753,9 @@ def uno_names(phenny, input, override=False):
     global away_last
     global user_triggered
     if input.sender != CHANNEL:
-        return phenny.reply('Try: "/ctcp %s ping" or simply "%s!"' % (phenny.nick, phenny.nick))
+        return phenny.reply('Prova: "/ctcp %s ping" o simplement "%s!"' % (phenny.nick, phenny.nick))
     if time.time() - away_last < 480 and not override:
-        phenny.notice(input.nick, u'Aquesta ordre té un ús limitat.')
+        phenny.notice(input.nick, u'Aquesta ordre tÃ© un Ãºs limitat.')
         return
     away_last = time.time()
 
@@ -822,7 +822,7 @@ def uno_away(phenny, input):
         save_away(phenny, away_list)
         phenny.reply('Estas marcat com a absent!')
     test_list = load_away()
-uno_away.commands = ['away']
+uno_away.commands = ['away', 'absent']
 uno_away.rate = 0
 
 def uno_ping_force(phenny, input):
