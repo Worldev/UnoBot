@@ -1,6 +1,7 @@
 language: python
-sudo: true
 python:
   - "2.6"
+  
+install: "sudo chmod 777 phenny"
 
 script: ./phenny
