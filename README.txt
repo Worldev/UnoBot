@@ -1,3 +1,7 @@
+#UnoBot
+
+[![Build Status](https://travis-ci.org/CatIRCBots/UnoBot.svg?branch=master)](https://travis-ci.org/CatIRCBots/UnoBot)
+
 Instal·lació:
 
 1) Executa ./phenny - això crea l'arxiu de configuració.
