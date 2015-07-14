@@ -19,22 +19,20 @@ def check_python_version():
 def create_default_config(fn): 
    f = open(fn, 'w')
    print >> f, trim(u"""\
-   # Per editar aquest fiter tingueu en compte que:
-   # 1.- *Només* canvia les dades que estan entre cometes ('dada'). La resta de paraules *no* les toquis.
-   # 2.- No posis caràcters especials, ni esborris les cometes. Senzillament omple el seu contingut per una altra paraula.
-   nick = 'Botuno' # Aquest és el nom del teu bot. Per defecte és Botuno.
-   host = 'irc.freenode.net' # Aquesta és l'adreça del servidor on s'ha de connectar. Per defecte és Freenode
-   channels = ['#CatBots', '#segoncanal'] # Aquests són els canals on s'ha de connectar automàticament.
-   owner = 'yournickname' # Aquí has de posar el teu nick de l'IRC.
+   nick = 'UnoBot'
+   host = 'irc.example.net'
+   channels = ['#example', '#test']
+   owner = 'yournickname'
 
-   password = 'example' # La contrassenya del bot a IRC, si el seu nick està registrat.
-   serverpass = 'serverpass' # La contrassenya del servidor (Si en té)
+   # password is the NickServ password, serverpass is the server password
+   # password = 'example'
+   # serverpass = 'serverpass'
 
-   admins = [owner, 'nick2'] # Nicks d'usuaris de confiança. Podran fer entrar i sortir el bot dels canals.
-   exclude = []
+   # These are people who will be able to use admin.py's functions...
+   admins = [owner, 'someoneyoutrust']
+   # But admin.py is disabled by default, as follows:
+   exclude = ['admin']
 
-   # En principi, no necessites res més.
-   
    # If you want to enumerate a list of modules rather than disabling
    # some, use "enable = ['example']", which takes precedent over exclude
    # 
