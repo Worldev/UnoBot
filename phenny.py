@@ -8,11 +8,11 @@ Després executa ./phenny una altra vegada
 import sys, os, imp, optparse
 from textwrap import dedent as trim
 
-dotdir = os.path.expanduser('~/.phenny')
+dotdir = os.path.expanduser('config')
 
 def check_python_version(): 
    if sys.version_info < (2, 4): 
-      error = 'Error: Necessites el python 2.4 o un altre, de www.python.org'
+      error = 'Error: You need Python 2.4 or later. Download it on www.python.org'
       print >> sys.stderr, error
       sys.exit(1)
 
@@ -56,7 +56,7 @@ def create_default_config(fn):
    f.close()
 
 def create_default_config_file(dotdir):
-   print 'Creating a default config file at ~/.phenny/default.py...'
+   print 'Creating a default config file at config/default.py...'
    default = os.path.join(dotdir, 'default.py')
    create_default_config(default)
 
@@ -64,7 +64,7 @@ def create_default_config_file(dotdir):
    sys.exit(0)
 
 def create_dotdir(dotdir): 
-   print 'Creating a config directory at ~/.phenny...'
+   print 'Creating a config directory at UnoBot/config...'
    try: os.mkdir(dotdir)
    except Exception, e: 
       print >> sys.stderr, 'There was a problem creating %s:' % dotdir
