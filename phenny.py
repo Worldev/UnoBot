@@ -23,6 +23,7 @@ def create_default_config(fn):
    host = 'irc.example.net'
    channels = ['#example', '#test']
    owner = 'yournickname'
+   lang = 'en' # Can be 'en' for english, 'es' for spanish or 'ca' for catalan.
 
    # password is the NickServ password, serverpass is the server password
    # password = 'example'
