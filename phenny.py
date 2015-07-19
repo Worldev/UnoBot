@@ -136,6 +136,11 @@ def main(argv=None):
       module = imp.load_source(name, config_name)
       module.filename = config_name
 
+      if hasattr(module, 'lang'):
+         f = open('config/.lang.txt', 'w')
+         f.write(module.lang)
+         f.close()
+      
       if not hasattr(module, 'prefix'): 
          module.prefix = r'\.'
 
