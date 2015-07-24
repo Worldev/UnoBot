@@ -22,7 +22,7 @@ f = open('config/.lang.txt', 'r')
 lang = f.read()
 f.close()
 
-if lang == 'en':
+if lang == 'en': # Messages in english:
     STRINGS = {
     'ALREADY_STARTED': '\x0300,01Game already started by %s! Type ".join" to join!',
     'GAME_STARTED': '\x0300,01IRC-UNO started by %s - Type ".join" to join!',
@@ -67,53 +67,52 @@ if lang == 'en':
     'PLAYER_LEAVES': '\x0300,01Player %s has left the game.',
     'OWNER_CHANGE': '\x0300,01Owner %s has left the game. New owner is %s.',
     }
-elif lang == 'es':
-    print("Error al cargar los mensajes en español, usando los ingleses")
+elif lang == 'es': # Mensajes en español:
     STRINGS = {
-    'ALREADY_STARTED': '\x0300,01Game already started by %s! Type ".join" to join!',
-    'GAME_STARTED': '\x0300,01IRC-UNO started by %s - Type ".join" to join!',
-    'GAME_STOPPED': '\x0300,01Game stopped.',
-    'CANT_STOP': '\x0300,01%s is the game owner, you can\'t stop it! To force stop the game, please wait %s seconds.',
-    'DEALING_IN': '\x0300,01Dealing %s into the game as player #%s!',
-    'JOINED': '\x0300,01Dealing %s into the game as player #%s!',
-    'ALREADY_JOINED': '\x0300,01Player, %s, is already in the game as player #%s!',
-    'ENOUGH': '\x0300,01There are enough players, type .deal to start!',
-    'NOT_STARTED': '\x0300,01Game not started, type .uno to start!',
-    'NOT_ENOUGH': '\x0300,01Not enough players to deal yet.',
-    'NEEDS_TO_DEAL': '\x0300,01%s needs to deal.',
-    'ALREADY_DEALT': '\x0300,01Already dealt.',
-    'ON_TURN': '\x0300,01It\'s %s\'s turn.',
-    'DONT_HAVE': '\x0300,01You don\'t have that card, %s',
-    'DOESNT_PLAY': '\x0300,01That card does not play, %s',
-    'UNO': '\x0300,01UNO! %s has ONE card left!',
-    'WIN': '\x0300,01We have a winner! %s!!!! This game took %s',
-    'DRAWN_ALREADY': '\x0300,01You\'ve already drawn, either .pass or .play!',
-    'DRAWS': '\x0300,01%s draws a card',
-    'DRAWN_CARD': '\x0300,01Drawn card: %s',
-    'DRAW_FIRST': '\x0300,01%s, you need to draw first!',
-    'PASSED': '\x0300,01%s passed!',
-    'NO_SCORES': '\x0300,01No scores yet',
-    'TOP_CARD': '\x0300,01%s\'s turn. Top Card: %s',
-    'YOUR_CARDS': '\x0300,01Your cards: %s',
-    'NEXT_START': '\x0300,01Next: ',
-    'NEXT_PLAYER': '\x0300,01%s (%s cards)',
-    'D2': '\x0300,01%s draws two and is skipped!',
-    'CARDS': '\x0300,01Cards: %s',
-    'WD4': '\x0300,01%s draws four and is skipped!',
-    'SKIPPED': '\x0300,01%s is skipped!',
-    'REVERSED': '\x0300,01Order reversed!',
-    'GAINS': '\x0300,01%s gains %s points!',
-    'SCORE_ROW': '\x0300,01%s: #%s %s (%s points, %s games, %s won, %.2f points per game, %.2f percent wins)',
-    'GAME_ALREADY_DEALT': '\x0300,01Game has already been dealt, please wait until game is over or stopped.',
-    'PLAYER_COLOR_ENABLED': '\x0300,01Hand card colors \x0309,01enabled\x0300,01! Format: <COLOR>/[<CARD>].  Example: R/[D2] is a red Draw Two. Type \'.uno-help\' for more help.',
-    'PLAYER_COLOR_DISABLED': '\x0300,01Hand card colors \x0304,01disabled\x0300,01.',
-    'DISABLED_PCE': '\x0300,01Hand card colors is \x0304,01disabled\x0300,01 for %s. To enable, \'.pce-on\'',
-    'ENABLED_PCE': '\x0300,01Hand card colors is \x0309,01enabled\x0300,01 for %s. To disable, \'.pce-off\'',
-    'PCE_CLEARED': '\x0300,01All players\' hand card color setting is reset by %s.',
-    'PLAYER_LEAVES': '\x0300,01Player %s has left the game.',
-    'OWNER_CHANGE': '\x0300,01Owner %s has left the game. New owner is %s.',
+    'ALREADY_STARTED': u'\x0300,01%s ya ha empezado el juego! Escribe ".join" para jugar!',
+    'GAME_STARTED': u'\x0300,01IRC-UNO empezado por %s - Escribe ".join" para jugar!',
+    'GAME_STOPPED': u'\x0300,01Juego parado.',
+    'CANT_STOP': u'\x0300,01%s es el propietario del juego, tu no puedes pararlo! Para forzar que el juego termine, debes esperar %s segundos.',
+    'DEALING_IN': u'\x0300,01%s ha entrado al juego en la posición número %s!',
+    'JOINED': u'\x0300,01%s ha entrado al juego en la posición número %s!',
+    'ALREADY_JOINED': u'\x0300,01El jugador %s ya ha entrado al juego en la posición %s!',
+    'ENOUGH': u'\x0300,01Ya hay suficientes jugadores para empezar, escribe .deal para empezar!',
+    'NOT_STARTED': u'\x0300,01El juego no ha empezado! Escribe .uno para empezarlo!',
+    'NOT_ENOUGH': u'\x0300,01Aún no hay suficientes jugadores para jugar.',
+    'NEEDS_TO_DEAL': u'\x0300,01Sólo %s puede repartir las cartas.',
+    'ALREADY_DEALT': u'\x0300,01Ya se han repartido las cartas.',
+    'ON_TURN': u'\x0300,01Es el turno de %s.',
+    'DONT_HAVE': u'\x0300,01No tienes esa carta, %s!',
+    'DOESNT_PLAY': u'\x0300,01No puedes jugar esa cara ahora, %s!',
+    'UNO': u'\x0300,01UNO! %s tiene solamente una carta!',
+    'WIN': u'\x0300,01Ya tenemos un ganador! %s!!!! Este juego ha durado %s',
+    'DRAWN_ALREADY': u'\x0300,01Ya has cojido una carta. Sólo puedes .pasar o .jugar!',
+    'DRAWS': u'\x0300,01%s coje una carta',
+    'DRAWN_CARD': u'\x0300,01Has cojido la carta: %s',
+    'DRAW_FIRST': u'\x0300,01%s, antes de pasar tienes que cojer una carta! Escribe .cojer',
+    'PASSED': u'\x0300,01%s ha pasado!',
+    'NO_SCORES': u'\x0300,01Aún no hay puntuaciones',
+    'TOP_CARD': u'\x0300,01Turno de %s. Carta de encima del montón: %s',
+    'YOUR_CARDS': u'\x0300,01Tus cartas: %s',
+    'NEXT_START': u'\x0300,01Siguiente: ',
+    'NEXT_PLAYER': u'\x0300,01%s (%s cartas)',
+    'D2': u'\x0300,01%s coje dos cartas y pasa!',
+    'CARDS': u'\x0300,01Cartas: %s',
+    'WD4': u'\x0300,01%s coje cuatro cartas y pasa!',
+    'SKIPPED': u'\x0300,01%s pasa!',
+    'REVERSED': u'\x0300,01Órden de los turnos cambiado!',
+    'GAINS': u'\x0300,01%s gana %s puntos!',
+    'SCORE_ROW': u'\x0300,01%s: %sº %s (%s puntos, %s juegos, %s ganados, %.2f puntos por juego, %.2f porcentaje de ganados)',
+    'GAME_ALREADY_DEALT': u'\x0300,01El juego ya ha empezado; espera que termine o se pare.',
+    'PLAYER_COLOR_ENABLED': u'\x0300,01Colores de las cartas \x0309,01activados\x0300,01! Formato: <COLOR>/[<CARTA>].  Ejemplo: R/[D2] es una carta D2 (cojer 2 cartas) de color rojo. Escribe \'.uno-help\' para más información.',
+    'PLAYER_COLOR_DISABLED': u'\x0300,01Colores de las cartas \x0304,01desactivados\x0300,01.',
+    'DISABLED_PCE': u'\x0300,01%s ha \x0304,01desactivado\x0300,01 los colores de las cartas. Para activarlos, escribe \'.pce-on\'',
+    'ENABLED_PCE': u'\x0300,01%s ha \x0309,01activado\x0300,01 los colores de las cartas. Para desactivarlos, escribe \'.pce-off\'',
+    'PCE_CLEARED': u'\x0300,01%s ha restaurado la configuración de los colores de las cartas para todos los jugadores.',
+    'PLAYER_LEAVES': u'\x0300,01El jugador %s ha dejado el juego.',
+    'OWNER_CHANGE': u'\x0300,01El propietario, %s, ha dejado de jugar. El nuevo propietario es %s.',
     }
-elif lang == 'ca':
+elif lang == 'ca': # Missatges en català
     STRINGS = {
     'ALREADY_STARTED': u'\x0300,01%s ja ha iniciat el joc. Escriu ".ujoin" per jugar!',
     'GAME_STARTED': u'\x0300,01%s ha iniciat el joc de l\'UNO - Escriu ".ujoin" per jugar!',
@@ -161,7 +160,7 @@ elif lang == 'ca':
 else:
     print("There is an error on the language code. You must use \"en\" for english, \"es\" for spanish or \"ca\" for catalan.")
     sys.exit()
-    
+
 class UnoBot:
     def __init__(self):
         self.colored_card_nums = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'R', 'S', 'D2']
