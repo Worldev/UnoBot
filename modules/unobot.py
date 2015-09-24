@@ -7,7 +7,7 @@ random.seed()
 
 away_last = 0
 
-# Remember to change these 3 lines or nothing will work
+# Remember to change these 2 lines or nothing will work
 CHANNEL = '#uno'
 SCOREFILE = "unoscores.txt"
 
@@ -21,7 +21,7 @@ INACTIVE_TIMEOUT = 3
 f = open('config/.lang.txt', 'r')
 lang = f.read()
 f.close()
-675
+
 if lang == 'en': # Messages in english:
     STRINGS = {
     'ALREADY_STARTED': '\x0300,01Game already started by %s! Type ".join" to join!',
