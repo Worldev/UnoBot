@@ -5,6 +5,3 @@ python:
 install: "chmod 777 phenny"
 
 script: ./phenny
-
-notifications:
-  irc: "irc.lizardirc.org#catbots-bots"
